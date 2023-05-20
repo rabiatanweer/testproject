@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #9f01ea ;
+    padding: 1%;
+}
+.text{
+ text-decoration: none;
+ color: lightblue;
+ font-weight: 700;
+}
+.text:hover{
+    background-color: beige;
+    border-radius: 1rem ;
+    padding: 0.3rem 1rem;
+}

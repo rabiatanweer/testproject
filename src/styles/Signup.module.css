@@ -1,0 +1,88 @@
+* {box-sizing: border-box}
+
+.main{
+  /* background-color: #3CBBA4; */
+  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+  /* width: 100%; */
+  height: 100vh;
+  color: #9f01ea;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+  input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+button {
+  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+
+
+ .signupbtn {
+  float: left;
+  width: 100%;
+}
+
+
+.container {
+ 
+  width: 100%;
+    height: 70vh;
+    background-color: beige;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.3rem 1.5rem;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: rgba(79, 15, 200, 0.35) 0px 5px 15px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width:  320px) {
+   .signupbtn {
+    width: 100%;
+  }
+  
+  
+}

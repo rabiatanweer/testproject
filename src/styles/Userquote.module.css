@@ -1,0 +1,161 @@
+body{
+
+  background : linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+}
+.main {
+    text-align: center;
+   
+   
+    width: 100%;
+    height: 100vh;
+   
+    
+  }
+  
+ 
+  .main h1 {
+    font-size: 24px;
+    color: #650492;
+    font-weight: 700;
+    margin: 2rem;
+   
+  }
+  
+ 
+  .section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2rem;
+  }
+  
+ 
+  .card {
+    background-color: #abdbe3;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 40%;
+    border-radius: 2rem;
+    height: 20rem;
+    
+  }
+  .quotes{
+    overflow-y: auto;
+    height: 10rem;
+   
+  }
+ .quotes ul{
+  list-style: none;
+  color: #621784 ;
+  font-weight: 700;
+
+ }
+ .quotes li{
+  
+  margin: 7px;
+  padding: 0.7rem 0.3rem;
+  text-align: start;
+ }
+ .span{
+   margin-right: 2rem;
+ }
+ 
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #621784 ;
+  }
+  
+  
+  .card h5 {
+    font-size: 14px;
+    color: #5f2596;
+    margin-bottom: 20px;
+  }
+  
+ 
+  .card button {
+    padding: 10px 20px;
+    border-radius: 2rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30%;
+  }
+  
+ 
+  .card:last-child h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+
+  .card:last-child input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for the add quote button */
+  .card:last-child button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 2rem;
+  }
+
+  .input{
+    display: flex; 
+    justify-content: center; 
+     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .inputvalue{
+    width: 50%;
+   
+   
+  }
+  .input button{
+    width: 30%;
+    border-radius: 2rem;
+    font-size: 700;
+  }
+  .input button:hover{
+    cursor: pointer;
+   
+  }
+  @media (max-width: 700px) {
+    .section {
+        flex-direction: column;
+    }
+    .card h2{
+      font-size: 14px;
+    }
+    .card h5{
+      font-size: 10px;
+    }
+    .quotes li{
+      padding: 0;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    
+    }
+    .quotes ul{
+      padding: 0
+    
+    }
+    .main h1 {
+      font-size: 20px;
+    ;
+     
+    }
+  }
+  
