@@ -15,29 +15,25 @@ export default function Userquote() {
   const userName= localStorage.getItem(`name-${useremail}`)
   const [userData, setUserData]= useState([]);
  
-
-  // useEffect(() => {
-  //   axios.get('https://type.fit/api/quotes')
-  //       .then((res) => {
-      
-  //       localStorage.setItem('quoteData', JSON.stringify(res.data));})
-  //      const userProtectedData = JSON.parse(localStorage.getItem(`${useremail}`))
-  //      if (userProtectedData) {
-  //       setMyQuote(userProtectedData);
-  //       setUserData(userProtectedData);
-  //     } else {
-  //       setMyQuote([]);
-  //       setUserData([]);
-  //     }
-  //     // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-  // useEffect(()=>{
-  //   let quoteData= JSON.parse(localStorage.getItem('quoteData'))
-  //   const randomIndex = Math.floor(Math.random() * quoteData.length);
-  //     const randomQuote = quoteData[randomIndex];
-  //     setData(randomQuote);
-  // },
-  // [quote])
+  useEffect(() => {
+    let quoteData= JSON.parse(localStorage.getItem('quoteData'))
+    if (quoteData){
+      const randomIndex = Math.floor(Math.random() * quoteData.length);
+      const randomQuote = quoteData[randomIndex];
+      setData(randomQuote);
+      console.log(quoteData, "if")
+    }
+    else{
+    axios.get('https://type.fit/api/quotes')
+        .then((res) => {
+          console.log(res.data, "else")
+        localStorage.setItem('quoteData', JSON.stringify(res.data));
+        const randomIndex = Math.floor(Math.random() * res.data.length);
+        const randomQuote = res.data[randomIndex];
+        setData(randomQuote);
+      })  
+    }
+  }, [quote]);
 
   const handleNextQuote = () => {
     setQuote(!quote)

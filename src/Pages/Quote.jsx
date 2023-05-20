@@ -8,17 +8,27 @@ export default function Quote() {
   const [quote, setQuote] = useState();
 
   useEffect(() => {
-    axios.get('https://type.fit/api/quotes')
-        .then((res) => {
-        localStorage.setItem('quoteData', JSON.stringify(res.data));}) 
-  }, []);
-
-  useEffect(()=>{
     let quoteData= JSON.parse(localStorage.getItem('quoteData'))
-    const randomIndex = Math.floor(Math.random() * quoteData.length);
+    if (quoteData){
+      const randomIndex = Math.floor(Math.random() * quoteData.length);
       const randomQuote = quoteData[randomIndex];
       setData(randomQuote);
-  },[quote])
+      console.log(quoteData, "if")
+    }
+    else{
+    axios.get('https://type.fit/api/quotes')
+        .then((res) => {
+          console.log(res.data, "else")
+        localStorage.setItem('quoteData', JSON.stringify(res.data));
+        const randomIndex = Math.floor(Math.random() * res.data.length);
+        const randomQuote = res.data[randomIndex];
+        setData(randomQuote);
+      }) 
+       
+        
+    }
+
+  }, [quote]);
 
   const handleNextQuote = () => {
     setQuote(!quote)
